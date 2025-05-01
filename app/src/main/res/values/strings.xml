@@ -1,3 +1,75 @@
 <resources>
     <string name="app_name">ListEvents</string>
+
+    <string name="desc_nata">
+        Nathanahel Rubén Cano Monge es un cantante y compositor mexicano dedicado principalmente al
+        género musical corridos tumbados, además de ser acreditado como precursor del mismo. Su
+        fama llegó con su segundo álbum de estudio Corridos Tumbados, lanzado el mismo año después
+        de firmar con la disquera estadounidense Rancho Humilde, convirtiéndose en el artista más
+        exitoso y famoso firmado por esta hasta la actualidad.
+    </string>
+    <string name="desc_billie">
+        Billie Eilish Pirate Baird OConnell, conocida simplemente como Billie Eilish, es una
+        cantante, compositora y productora musical estadounidense. Ganó la atención del público por
+        primera vez en 2015 con su sencillo debut «Ocean Eyes», escrito y producido por su hermano
+        Finneas OConnell, con quien colabora en música y espectáculos en vivo.
+    </string>
+    <string name="desc_junior">
+        Antonio Herrera Pérez, más conocido como Junior H, es un cantante y compositor mexicano.
+        Se especializa en el subgénero de corridos tumbados, popularizando el género con sus
+        primeros álbumes de estudio. Contactado por el empresario Jimmy Humilde, entró a la
+        compañía discográfica chicana independiente Rancho Humilde, donde conoció al también
+        cantante Natanael Cano, con el que colaboró en el sencillo «Disfruto Lo Malo» dentro del
+        álbum Corridos Tumbados, álbum que incluye su éxito «Ella», canción escrita por el mismo.
+    </string>
+    <string name="desc_pesado">
+        El Grupo Pesado es una agrupación de música regional mexicana especializada en el estilo
+        norteño y fundada en 1993 en la ciudad de Monterrey, Nuevo León, México. Es considerado
+        como uno de los grupos que inició una nueva generación de este tipo de música, dándole una
+        frescura que ha tenido bastante aceptación en México y los Estados Unidos y abriendo las
+        puertas a nuevos grupos del mismo movimiento.
+    </string>
+    <string name="desc_firme">
+        Grupo Firme es una agrupación de música regional mexicana creada por Jairo Corrales y
+        Eduin Cazares en la ciudad de Tijuana, Baja California, en 2014. Se especializan en música
+        sinaloense. Su primer álbum llamado Pasado, Presente, Futuro, publicado en el año 2017 con
+        un total de doce canciones. El Barco y En Vivo Desde Tijuana: los Buitrones y los Firmes
+        fueron sus álbumes posteriores.
+    </string>
+    <string name="desc_bfmv">
+        Bullet For My Valentine (abreviado BFMV) es una banda galesa de metalcore procedente de
+        Bridgend, Gales. El grupo se constituyó originalmente bajo el nombre de "Jeff Killed John"
+        en 1998, versionando canciones de Metallica y Nirvana. Grabaron seis canciones que nunca
+        fueron publicadas, pero dos de ellas fueron reeditadas para posteriores trabajos del grupo.
+        Las dificultades económicas marcaron un cambio en la dirección de su música y en el nombre
+        de la banda por el de Bullet For My Valentine. Entre sus principales influencias, destacan
+        bandas como Metallica , Iron Maiden y Slayer. En 2002 consiguieron un contrato de grabación
+        con Sony BMG para la grabación de cinco discos.
+    </string>
+    <string name="desc_regida">
+        Fuerza Regida es un grupo de música regional mexicana, formado en 2015. Han lanzado
+        11 álbumes y han sido nominados en varias ocasiones a premios como iHeartRadio Music Awards,
+        Premios Billboard Latino, Premios Lo Nuestro y Premios Juventud. El grupo debutó en la
+        lista Hot 100 de Billboard con la canción «Bebé dame» en colaboración con Grupo Frontera,
+        alcanzando la posición 25 y ha enlistado varios sencillos en la lista Hot Latin
+        Songs de Estados Unidos.
+    </string>
+    <string name="desc_bmth">
+        Bring Me the Horizon (abreviado BMTH) es una banda británica de rock proveniente de
+        Sheffield, Inglaterra. Se formó en 2003 y actualmente está conformada por el vocalista
+        Oliver Sykes, el guitarrista Lee Malia, el bajista Matt Kean y el baterista Matt Nicholls.
+        Están firmados por RCA Records a nivel mundial y por Columbia Records para Estados Unidos
+        exclusivamente. El estilo musical de sus inicios así como el de su álbum debut
+        Count Your Blessings era el deathcore, pero en sus siguientes discos adoptaron un estilo
+        más ecléctico del metalcore.
+    </string>
+    <string name="desc_spiritbox">
+        Spiritbox es una banda canadiense de Metalcore originaria de Victoria, British Columbia.
+        Formada por el dúo de marido y mujer, el guitarrista Mike Stringer y la cantante
+        Courtney LaPlante, los cuáles crearon Spiritbox en 2017. La banda está actualmente
+        compuesta por LaPlante, Stringer, el bajista Josh Gilbert y el baterista Zev Rosenberg.
+        El estilo de la banda es difícil de encasillar en un género de metal específico, y muestra
+        una mezcla de estilos que se basan en una variedad de influencias e incorporan elementos
+        electrónicos.
+    </string>
 </resources>

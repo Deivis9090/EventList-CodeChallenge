@@ -6,6 +6,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -26,13 +27,15 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder>{
 
     private EventViewModel eventViewModel;
     private OnFavoriteClickListener listener;
+    private OnItemClickListener clickListener;
     private List<Event> events;
     private Context context;
 
-    public EventAdapter (List<Event> events, Context context, OnFavoriteClickListener listener){
+    public EventAdapter (List<Event> events, Context context, OnFavoriteClickListener listener, OnItemClickListener clickListener){
         this.events = events;
         this.context = context;
         this.listener = listener;
+        this.clickListener = clickListener;
     }
 
     @NonNull
@@ -68,10 +71,21 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder>{
                 ? R.drawable.star_yellow
                 : R.drawable.star_white;
 
+        // Listener to change Favorite Status...
+
         holder.favorite.setImageResource(icon);
         holder.favorite.setOnClickListener(view -> {
             listener.onFavoriteClick(position, e);
         });
+
+        // Listener to see the details of Event...
+
+        holder.itemView.setOnClickListener(v -> {
+            if (clickListener != null) {
+                clickListener.onItemClick(e);
+            }
+        });
+
         holder.bind(e.getName(),e.getDate(),e.getPlace(),e.getFavorite());
     }
 
@@ -123,5 +137,9 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder>{
 
     public interface OnFavoriteClickListener {
         void onFavoriteClick(int position, Event event);
+    }
+
+    public interface OnItemClickListener {
+        void onItemClick(Event item);
     }
 }

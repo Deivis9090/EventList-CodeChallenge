@@ -72,4 +72,7 @@
         una mezcla de estilos que se basan en una variedad de influencias e incorporan elementos
         electrónicos.
     </string>
+
+    <string name="textViewFavorites">Favoritos</string>
+    <string name="textViewAll">Todos</string>
 </resources>

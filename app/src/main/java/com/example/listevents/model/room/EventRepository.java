@@ -18,6 +18,7 @@ public class EventRepository {
     private static Context context;
     private EventDatabase appdb;
     private LiveData<List<Event>> data;
+    private LiveData<List<Event>> dataFavs;
 
     public static EventRepository getInstance(Application app) {
         if (INSTANCE == null) {
@@ -37,6 +38,11 @@ public class EventRepository {
         return data;
     }
 
+    public LiveData<List<Event>> getAllFavoriteEvents(){
+        dataFavs = dao.getAllFavoriteEvents();
+        return dataFavs;
+    }
+
     public void insert(Event d) {
         new InsertDataCardAsyncTask(dao).execute(d);
     }
@@ -47,11 +53,6 @@ public class EventRepository {
 
     public void updateFavorite(int id, int value, int pos, UpdateFavoriteCallback callback){
         new UpdateFavoriteAsyncTask(dao, callback).execute(id, value, pos);
-    }
-
-    public LiveData<List<Event>> searchEvents(String query) {
-        String searchQuery = "%" + query + "%";
-        return dao.searchEvents(searchQuery);
     }
 
     private static class InsertDataCardAsyncTask extends AsyncTask<Event, Void, Void> {

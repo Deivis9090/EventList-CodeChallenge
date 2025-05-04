@@ -2,8 +2,11 @@ package com.example.listevents.view;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.TextView;
+
 import androidx.appcompat.widget.SearchView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,6 +21,8 @@ import com.example.listevents.model.room.EventDatabase;
 import com.example.listevents.model.room.EventRepository;
 import com.example.listevents.viewmodel.EventViewModel;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,7 +33,8 @@ public class MainActivity extends AppCompatActivity
     private RecyclerView recyclerView;
     private EventViewModel eventViewModel;
     private SearchView searchView;
-    private List<Event> allEvents = new ArrayList<>();
+    private TextView textViewFavorites;
+    private TextView textViewAll;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +49,8 @@ public class MainActivity extends AppCompatActivity
         eventViewModel = new ViewModelProvider(this).get(EventViewModel.class);
         recyclerView = findViewById(R.id.listViewEvents);
         searchView = findViewById(R.id.searchView);
+        textViewFavorites = findViewById(R.id.btnFavorites);
+        textViewAll = findViewById(R.id.btnAll);
 
         eventAdapter = new EventAdapter(new ArrayList<>(), this, this::onFavoriteClicked, item ->{
             Intent intent = new Intent(this, DetailsActivity.class);
@@ -53,14 +61,24 @@ public class MainActivity extends AppCompatActivity
             intent.putExtra("image", item.getImage());
             startActivity(intent);
         });
+
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(eventAdapter);
 
         configureSearchView();
 
-        eventViewModel.getAllEvents().observe(this, events -> {
-            this.allEvents = events;
+        textViewFavorites.setOnClickListener(v -> {
+            eventViewModel.showFavoriteEvents();
+        });
+
+        textViewAll.setOnClickListener(v ->{
+            eventViewModel.showAllEvents();
+        });
+
+        eventViewModel.getEventsToDisplay().observe(this, events -> {
+            eventViewModel.setCurrentEvents(events);
             eventAdapter.setData(events);
+            eventAdapter.notifyDataSetChanged();
         });
     }
 
@@ -83,20 +101,26 @@ public class MainActivity extends AppCompatActivity
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                filterEvents(newText.toLowerCase());
+                filterEvents(newText);
                 return true;
             }
         });
     }
 
     private void filterEvents(String searchText) {
+        List<Event> currentList = eventViewModel.getCurrentEvents();
+
         if (searchText.isEmpty()) {
-            eventAdapter.setData(allEvents);
+            eventAdapter.setData(currentList);
         } else {
             List<Event> filteredList = new ArrayList<>();
-            for (Event event : allEvents) {
-                if (event.getName().toLowerCase().contains(searchText) ||
-                        event.getDesc().toLowerCase().contains(searchText)) {
+            String query = searchText.toLowerCase();
+
+            for (Event event : currentList) {
+                String eventName = event.getName().toLowerCase();
+                String eventDesc = event.getDesc().toLowerCase();
+
+                if (eventName.contains(query) || eventDesc.contains(query)) {
                     filteredList.add(event);
                 }
             }

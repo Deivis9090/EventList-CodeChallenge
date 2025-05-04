@@ -28,12 +28,9 @@ public interface EventDao {
     @Query("SELECT * FROM Event")
     LiveData<List<Event>> getAllEvents();
 
-    @Query("SELECT * FROM Event")
-    List<Event> getEvents();
-
     @Query("UPDATE Event SET favorite = :isFavorite WHERE id = :id")
     void updateFavorite(int id, int isFavorite);
 
-    @Query("SELECT * FROM Event WHERE name LIKE :query OR `desc` LIKE :query")
-    LiveData<List<Event>> searchEvents(String query);
+    @Query("SELECT * FROM Event WHERE favorite = 1")
+    LiveData<List<Event>> getAllFavoriteEvents();
 }

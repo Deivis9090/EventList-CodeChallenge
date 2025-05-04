@@ -7,6 +7,8 @@ import androidx.room.PrimaryKey;
 @Entity(tableName = "Event", indices = {@Index(value = {"name"})})
 public class Event {
 
+    // Variables...
+
     @PrimaryKey(autoGenerate = true)
     private int id;
     private String name;
@@ -16,6 +18,8 @@ public class Event {
     private String desc;
     private int favorite;
 
+    // Constructor
+
     public Event(String name, String date, String place, String image, String desc, int favorite) {
         this.name = name;
         this.date = date;
@@ -24,6 +28,8 @@ public class Event {
         this.desc = desc;
         this.favorite = favorite;
     }
+
+    // Getters y Setters
 
     public String getName() {
         return name;

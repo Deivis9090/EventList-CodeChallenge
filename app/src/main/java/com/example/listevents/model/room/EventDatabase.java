@@ -15,10 +15,14 @@ import java.util.concurrent.Executors;
 @Database(entities = {Event.class}, version = 4)
 public abstract class EventDatabase extends RoomDatabase {
 
+    // Variables
+
     private static EventDatabase instance;
     public abstract EventDao eventDao();
 
     private static final ExecutorService executor = Executors.newSingleThreadExecutor();
+
+    // Instancias / Callbacks para BD
 
     public static synchronized EventDatabase getInstance(Context context) {
         if (instance == null) {
@@ -40,6 +44,10 @@ public abstract class EventDatabase extends RoomDatabase {
             super.onCreate(db);
             executor.execute(() -> {
                 EventDao dao = instance.eventDao();
+
+                // Datos mockeados o hardcodeados
+                // (se crean cada que se crea al BD o se instala la app)
+
                 dao.insert(new Event("Natanael Cano",           "2025-04-22", "Palenque de la Feria", "nata_logo",     "Nathanahel Rubén Cano Monge es un cantante y compositor mexicano dedicado principalmente al género musical corridos tumbados, además de ser acreditado como precursor del mismo.",0));
                 dao.insert(new Event("Billie Eilish",           "2025-04-22", "Foro de las Estrellas","billie_logo",   "Billie Eilish Pirate Baird OConnell, conocida simplemente como Billie Eilish, es una cantante, compositora y productora musical estadounidense.",0));
                 dao.insert(new Event("Junior H",                "2025-04-23", "Foro de las Estrellas","junior_logo",   "Antonio Herrera Pérez, más conocido como Junior H, es un cantante y compositor mexicano. Se especializa en el subgénero de corridos tumbados.",0));

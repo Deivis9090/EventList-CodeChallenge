@@ -20,12 +20,16 @@ import com.example.listevents.R;
 
 public class DetailsActivity extends AppCompatActivity {
 
+    // Variables
+
     private TextView textViewName;
     private TextView textViewDate;
     private TextView textViewPlace;
     private TextView textViewDesc;
     private ImageView imageViewProfile;
     private ColorDrawable placeholder;
+
+    // OnCreate (inicializacion de elementos y asignacion de valores)
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,11 +41,15 @@ public class DetailsActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_details);
 
+        // Elementos del layout
+
         textViewName = findViewById(R.id.textViewEventName);
         textViewDate = findViewById(R.id.textViewEventDate);
         textViewPlace = findViewById(R.id.textViewEventPlace);
         textViewDesc = findViewById(R.id.textViewEventDesc);
         imageViewProfile = findViewById(R.id.imageViewEventProfile);
+
+        // Obtener los datos del Intent (MainActivity::OnClickItem)
 
         String name =  getIntent().getStringExtra("name");
         String date =  getIntent().getStringExtra("date");
@@ -49,6 +57,8 @@ public class DetailsActivity extends AppCompatActivity {
         String desc =  getIntent().getStringExtra("desc");
         String image = getIntent().getStringExtra("image");
         placeholder = new ColorDrawable(Color.GRAY);
+
+        // Seteo de informacion en los elementos
 
         textViewName.setText(name);
         textViewDate.setText(date);

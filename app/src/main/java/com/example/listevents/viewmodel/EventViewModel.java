@@ -19,9 +19,13 @@ import java.util.List;
 
 public class EventViewModel extends AndroidViewModel {
 
+    // Variables basicas para obtener la informacion de BD
+
     private EventRepository repository;
     private LiveData<List<Event>> data;
     private LiveData<List<Event>> dataFavs;
+
+    // Mutables para identificar la lista a mostrar
 
     private MutableLiveData<Boolean> showFavorites = new MutableLiveData<>(false);
     public LiveData<Boolean> showFavoritesList = showFavorites;
@@ -31,10 +35,14 @@ public class EventViewModel extends AndroidViewModel {
 
     private List<Event> _currentEvents = new ArrayList<>();
 
+    // Instancia del ViewModel
+
     public EventViewModel(@NonNull Application application) {
         super(application);
         repository = EventRepository.getInstance(application);
     }
+
+    // Funciones para el ViewModel (llamada de las vistas)
 
     public void insert(Event c) {
         repository.insert(c);
@@ -53,6 +61,8 @@ public class EventViewModel extends AndroidViewModel {
         dataFavs = repository.getAllFavoriteEvents();
         return dataFavs;
     }
+
+    // Funciones para listas de Favoritos o todos los Eventos (segun el caso)
 
     public void showAllEvents() {
         _showOnlyFavorites.setValue(false);
@@ -75,6 +85,8 @@ public class EventViewModel extends AndroidViewModel {
     public void setCurrentEvents(List<Event> events) {
         _currentEvents = events;
     }
+
+    // Funcion actualizar Favorito
 
     public void updateFavorite(int id, int value, int pos, EventRepository.UpdateFavoriteCallback callback){
         repository.updateFavorite(id, value, pos, callback);

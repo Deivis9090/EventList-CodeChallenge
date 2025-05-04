@@ -11,6 +11,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.listevents.R;
 
 public class SplashActivity extends AppCompatActivity {
+
+    // Actividad para el Splash (pantalla de carga de la app)
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

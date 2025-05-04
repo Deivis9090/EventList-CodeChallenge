@@ -25,11 +25,15 @@ import java.util.List;
 
 public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder>{
 
+    // Variables
+
     private EventViewModel eventViewModel;
     private OnFavoriteClickListener listener;
     private OnItemClickListener clickListener;
     private List<Event> events;
     private Context context;
+
+    // Constructor
 
     public EventAdapter (List<Event> events, Context context, OnFavoriteClickListener listener, OnItemClickListener clickListener){
         this.events = events;
@@ -37,6 +41,8 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder>{
         this.listener = listener;
         this.clickListener = clickListener;
     }
+
+    // BindViewHolder (logica del Adapter)
 
     @NonNull
     @Override
@@ -89,6 +95,8 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder>{
         holder.bind(e.getName(),e.getDate(),e.getPlace(),e.getFavorite());
     }
 
+    // Funciones para obtener datos
+
     public void setData(List<Event> data) {
         this.events = data;
         notifyDataSetChanged();
@@ -105,6 +113,8 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder>{
     public int getItemCount() {
         return events.size();
     }
+
+    // ViewHolder (Estructura para el Adapter)
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
@@ -134,6 +144,8 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder>{
             }
         }
     }
+
+    // Interfaces para callbacks
 
     public interface OnFavoriteClickListener {
         void onFavoriteClick(int position, Event event);

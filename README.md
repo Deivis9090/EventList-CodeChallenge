@@ -30,15 +30,15 @@ Proyecto de Android Nativo hecho con Java de listado de eventos
 
 # PRINCIPIOS DE PROGRAMACION APLICADOS:
   SOLID:
-    1. Single Responsibility Principle (SRP)
-    ViewModel: La clase EventViewModel se encarga exclusivamente de la lógica de negocio (manejo de eventos y favoritos), sin mezclarse con la UI.
-    Adapter: EventAdapter solo gestiona la representación visual de los datos en el RecyclerView.
-    2. Open/Closed Principle (OCP)
-    Extensibilidad: El uso de LiveData en EventViewModel permite observar cambios en los datos sin modificar la fuente original (abierto a extensión, cerrado a modificación).
-    3. Liskov Substitution Principle (LSP)
-    Interfaces limpias: La interfaz UpdateFavoriteCallback tiene un único método (onUpdateComplete), asegurando que cualquier implementación no rompa el contrato base.
-    5. Dependency Inversion Principle (DIP)
-    Inyección implícita: ViewModelProvider permite que MainActivity dependa de una abstracción (EventViewModel) en lugar de una implementación concreta.
+    - Single Responsibility Principle (SRP)
+      ViewModel: La clase EventViewModel se encarga exclusivamente de la lógica de negocio (manejo de eventos y favoritos), sin mezclarse con la UI.
+      Adapter: EventAdapter solo gestiona la representación visual de los datos en el RecyclerView.
+    - Open/Closed Principle (OCP)
+      Extensibilidad: El uso de LiveData en EventViewModel permite observar cambios en los datos sin modificar la fuente original (abierto a extensión, cerrado a modificación).
+    - Liskov Substitution Principle (LSP)
+      Interfaces limpias: La interfaz UpdateFavoriteCallback tiene un único método (onUpdateComplete), asegurando que cualquier implementación no rompa el contrato base.
+    - Dependency Inversion Principle (DIP)
+      Inyección implícita: ViewModelProvider permite que MainActivity dependa de una abstracción (EventViewModel) en lugar de una implementación concreta.
   
   DRY:
   Reutilización efectiva

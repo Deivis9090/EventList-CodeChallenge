@@ -62,3 +62,6 @@ Proyecto de Android Nativo hecho con Java de listado de objetos Event (String na
   1. Primero se descarga el archivo APK desde este enlace: https://drive.google.com/file/d/1RJu_D0GuSQ953LvKc_KmvjeBUq0mmlTO/view?usp=sharing
   2. Se va al archivo descargado y se permite instalar la app en el telefono (por cuestiones de seguridad, el telefono pregunta si se confia en la fuente).
 
+**DEMO DE LA APP:**
+  - Enlace a la demo: https://drive.google.com/file/d/1RlSsjbQzTQhez4vkDm-Vnl0M3nEJ4ece/view?usp=sharing
+

@@ -65,5 +65,9 @@ Proyecto de Android Nativo hecho con Java de listado de eventos
      - Android Studio (version Flamingo o superior).
      - Dispositivo / Emulador para ejecutar el proyecto.
   2. Pasos para Ejecucion:
-     - Clonar el proyecto de GitHub (git clone )
+     - Clonar el proyecto de GitHub (git clone https://github.com/Deivis9090/EventList-CodeChallenge.git)
+     - Abrir la aplicacion de Android Studio y abrir la carpeta del proyecto.
+     - Antes de ejecutar, conectar el dispositivo al equipo y permitir en el telefono "Depuracion pos USB", en Opciones de Desarrollador.
+     - Si no se tiene un dispositivo, se puede crear un Emulador para ejecutar la app, en Device Manager, "Add new device".
+     - Ejecutar la app con "Run". 
      

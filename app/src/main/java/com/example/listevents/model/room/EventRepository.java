@@ -13,12 +13,16 @@ import java.util.List;
 
 public class EventRepository {
 
+    // Variables
+
     private static EventRepository INSTANCE;
     private final EventDao dao;
     private static Context context;
     private EventDatabase appdb;
     private LiveData<List<Event>> data;
     private LiveData<List<Event>> dataFavs;
+
+    // Instancias / Constructores
 
     public static EventRepository getInstance(Application app) {
         if (INSTANCE == null) {
@@ -32,6 +36,8 @@ public class EventRepository {
         appdb = EventDatabase.getInstance(app);
         dao = appdb.eventDao();
     }
+
+    // Funciones para interactuar con el DAO
 
     public LiveData<List<Event>> getAllEvents(){
         data = dao.getAllEvents();
@@ -86,6 +92,8 @@ public class EventRepository {
             return null;
         }
     }
+
+    // Tareas asincronas para manipulacion de datos en BD
 
     private static class UpdateFavoriteAsyncTask extends AsyncTask<Integer, Void, Integer> {
         private EventDao dao;

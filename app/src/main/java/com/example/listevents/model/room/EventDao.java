@@ -22,6 +22,8 @@ public interface EventDao {
     @Delete
     void delete(Event c);
 
+    // Consultas o Querys ...
+
     @Query("DELETE FROM Event WHERE 1")
     void deleteAll();
 

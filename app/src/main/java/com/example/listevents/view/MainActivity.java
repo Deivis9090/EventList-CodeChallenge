@@ -29,12 +29,16 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity
         implements EventRepository.UpdateFavoriteCallback {
 
+    // Variables
+
     private EventAdapter eventAdapter;
     private RecyclerView recyclerView;
     private EventViewModel eventViewModel;
     private SearchView searchView;
     private TextView textViewFavorites;
     private TextView textViewAll;
+
+    // OnCreate de la actividad principal
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,11 +50,15 @@ public class MainActivity extends AppCompatActivity
 
         setContentView(R.layout.activity_main);
 
+        // Elementos del layout
+
         eventViewModel = new ViewModelProvider(this).get(EventViewModel.class);
         recyclerView = findViewById(R.id.listViewEvents);
         searchView = findViewById(R.id.searchView);
         textViewFavorites = findViewById(R.id.btnFavorites);
         textViewAll = findViewById(R.id.btnAll);
+
+        // Intent para mandar informacion hacia DetailsActivity
 
         eventAdapter = new EventAdapter(new ArrayList<>(), this, this::onFavoriteClicked, item ->{
             Intent intent = new Intent(this, DetailsActivity.class);
@@ -62,10 +70,15 @@ public class MainActivity extends AppCompatActivity
             startActivity(intent);
         });
 
+        // Seteo del Adapter
+
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(eventAdapter);
 
+        // Configuracion del SearchView (busqueda por nombre, descripcion)
         configureSearchView();
+
+        // Observadores del Adapter para mandar listado de elementos
 
         textViewFavorites.setOnClickListener(v -> {
             eventViewModel.showFavoriteEvents();
@@ -82,6 +95,7 @@ public class MainActivity extends AppCompatActivity
         });
     }
 
+    // Al hacer clic en Favoritos, modificar informacion en BD
     private void onFavoriteClicked(int position, Event event) {
         int newFavValue = (event.getFavorite() == 1) ? 0 : 1;
         eventViewModel.updateFavorite(event.getId(), newFavValue, position, this);
@@ -106,6 +120,8 @@ public class MainActivity extends AppCompatActivity
             }
         });
     }
+
+    // Filtrar lista por el SearchView
 
     private void filterEvents(String searchText) {
         List<Event> currentList = eventViewModel.getCurrentEvents();

@@ -1,5 +1,5 @@
 # EVENT LIST
-Proyecto de Android Nativo hecho con Java de listado de eventos
+Proyecto de Android Nativo hecho con Java de listado de objetos Event (String name, String date, String place, etc).
 
 **ARQUITECTURA IMPLEMENTADA:**
 

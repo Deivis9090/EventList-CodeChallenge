@@ -1,7 +1,8 @@
 # EVENT LIST
 Proyecto de Android Nativo hecho con Java de listado de eventos
 
-ARQUITECTURA IMPLEMENTADA:
+*ARQUITECTURA IMPLEMENTADA:*
+
   - MVVM (Model-View-ViewModel): Separa la lógica de negocio (ViewModel) de la UI (Activity/Fragment).
   - LiveData: Para actualizaciones reactivas de la UI cuando cambian los datos.
   - Room Database: Persistencia local de eventos.
@@ -9,11 +10,12 @@ ARQUITECTURA IMPLEMENTADA:
 
   ACTIVITY/FRAGMENT --- (Observa) --> VIEWMODEL --- (Usa) --> REPOSITORY --- (Accede) --> ROOM DATABASE
 
-ORGANIZACION DEL PROYECTO:
+*ORGANIZACION DEL PROYECTO:*
   
   ![image](https://github.com/user-attachments/assets/5a19248c-ab22-43e0-8c4f-535b4df047a9)
 
-PRINCIPIOS DE PROGRAMACION APLICADOS:
+*PRINCIPIOS DE PROGRAMACION APLICADOS:*
+
   1. SOLID:
      - Single Responsibility Principle (SRP):
      ViewModel: La clase EventViewModel se encarga exclusivamente de la lógica de negocio (manejo de eventos y favoritos), sin mezclarse con la UI.
@@ -43,7 +45,8 @@ PRINCIPIOS DE PROGRAMACION APLICADOS:
       Abstracciones justas
        3. ViewModel + LiveData: Simplifica el manejo de datos con un flujo reactivo y sin over-engineering.
       
-INSTALACION DE PROYECTO:
+*INSTALACION DE PROYECTO:*
+
   1. Requisitos:
      - Android Studio (version Flamingo o superior).
      - Dispositivo / Emulador para ejecutar el proyecto.

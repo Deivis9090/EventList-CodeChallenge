@@ -75,4 +75,6 @@
 
     <string name="textViewFavorites">Favoritos</string>
     <string name="textViewAll">Todos</string>
+
+    <string name="textViewSplash">ListEvents</string>
 </resources>

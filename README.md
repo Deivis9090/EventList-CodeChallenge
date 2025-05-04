@@ -56,4 +56,9 @@ Proyecto de Android Nativo hecho con Java de listado de eventos
      - Antes de ejecutar, conectar el dispositivo al equipo y permitir en el telefono "Depuracion pos USB", en Opciones de Desarrollador.
      - Si no se tiene un dispositivo, se puede crear un Emulador para ejecutar la app, en Device Manager, "Add new device".
      - Ejecutar la app con "Run". 
-     
+
+**INSTALACION DE APLICACION:**
+
+  1. Primero se descarga el archivo APK desde este enlace: https://drive.google.com/file/d/1RJu_D0GuSQ953LvKc_KmvjeBUq0mmlTO/view?usp=sharing
+  2. Se va al archivo descargado y se permite instalar la app en el telefono (por cuestiones de seguridad, el telefono pregunta si se confia en la fuente).
+

@@ -65,3 +65,7 @@ Proyecto de Android Nativo hecho con Java de listado de objetos Event (String na
 **DEMO DE LA APP:**
   - Enlace a la demo: https://drive.google.com/file/d/1RlSsjbQzTQhez4vkDm-Vnl0M3nEJ4ece/view?usp=sharing
 
+**APP UNICAMENTE ANDROID NATIVA:**
+  Esta app esta hecha unicamente para Android, ya que es ahi donde he trabajado este tiempo a hacer aplicaciones moviles; y aplicaciones para IOS realmente desconozco totalmente el como hacerlas, pero espero algun dia aprender de las dos maneras
+
+
